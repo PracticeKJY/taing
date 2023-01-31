@@ -32,7 +32,8 @@ a {
   );
   color: rgba(255, 255, 255, 1);
   /* -webkit-transition: backdrop-filter 0.3s linear, background-color 0.3s linear; */
-  transition: backdrop-filter 0.3s linear, background-color 0.3s linear;
+  transition: backdrop-filter 0.3s linear,
+    background-color 0.3s linear;
   background-color: rgba(0, 0, 0, 0);
 }
 
