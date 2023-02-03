@@ -37,9 +37,9 @@ module.exports = {
     // 중첩 if문을 허용하지 않는다
     "max-depth": ["error", 1],
     // if 문에서 중복 조건을 허용하지 않는다
-    "no-dupe-else-if": ["error"],
+    // "no-dupe-else-if": ["error"],
     // if 문에서 return을 하면 else 문에서 return을 할 수 없다
-    "no-else-return": ["error"],
+    // "no-else-return": ["error"],
     // 삼항연산자를 허용하지 않는다
     "no-unneeded-ternary": [
       "error",
