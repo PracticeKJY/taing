@@ -7,6 +7,21 @@
   box-sizing: border-box;
 }
 
+.deactive {
+  background-color: transparent;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease;
+}
+.active {
+  background-color: var(--black);
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease;
+}
+
 body {
   background-color: var(--black);
   color: var(--white);
@@ -257,7 +272,6 @@ legend {
   flex-direction: row;
   align-items: center;
   padding: 29px 70px;
-  /* margin: 1.5625vw 3.6vw; */
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.7) 0%,
@@ -266,12 +280,11 @@ legend {
   position: fixed;
   z-index: 999;
   width: 100%;
-  /* transform: translate(-3.6%, -38%); */
 }
 
 /* 로고이미지(taing)도 같이 작아지게 하고싶었으나 대실패  */
 .logo {
-  width: 132 px; /*= 132px*/
+  width: 132px; /*= 132px*/
   height: 42px; /* =42px*/
   flex-shrink: 0;
 }
@@ -285,7 +298,7 @@ legend {
 
 /* 전체적으로 logo와 nav를 같이 작아지게 하고싶었으나 대실패 */
 nav {
-  margin-left: 3vw; /*=4.2vw*/
+  margin-left: 3vw;
 }
 
 .gnb {
@@ -307,7 +320,7 @@ nav {
   color: var(--gray-200);
   text-align: center;
 
-  /*얘 혼자, margin-top을 줘야 레이아웃이 맞는 이슈발생 */
+  /*얘 혼자, margin-top을 줘야 레이아웃이 맞는 이슈발생 => 아마 이미지크기때문에 레이아웃이 꺠지는현상이 나오는걸로 유추 */
   margin-top: 3px;
 }
 
@@ -329,18 +342,13 @@ nav {
 }
 
 aside {
+  /*  개발자도구-> 기기툴바전환 선택시 aside자체가 옆으로 밀리는 이슈 발생 (모바일기준, 150px을 주면 보임) */
   margin-left: auto;
-  /* 왜 모바일 150px주면 보이는데 auto하면안보이냐 */
 }
 
 .button {
   margin-right: 10px;
   background: transparent;
-  /* background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.7) 0%,
-    rgba(0, 0, 0, 0) 100%
-  ); */
   border: none;
   width: 40px;
   height: 40px;
@@ -358,23 +366,6 @@ aside {
   height: 40px;
 }
 
-/* 
-  .bullet.is-active {
-    border: 4px solid brown;
-    transform: translate(-5px, -5px);
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.466);
-  } */
-
-/* .pagination {
-  display: flex;
-  justify-content: space-between;
-}
-
-.bullet img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */
 .swiper {
   position: relative;
   width: 100%;
@@ -411,19 +402,6 @@ aside {
   object-fit: cover;
 }
 
-/* 인생2회차 멘트 */
-/* .test01 p {
-  position: absolute;
-  top: 30.458vw;
-  left: 4vw;
-  width: 365px;
-  opacity: 0.8;
-  text-align: left;
-  color: var(--white);
-  font-size: 28.43px;
-  font-weight: 400;
-} */
-
 /* 트렌지션 효과를 주려했으나, 해상도가 줄어들 때 즉각 반응을 못하는 이슈가 발생 */
 .text-wrap {
   position: absolute;
@@ -456,7 +434,6 @@ aside {
   text-align: left;
   width: 100px;
   top: 80%;
-  /* bottom: 20%; */
   margin-left: 5vw;
 }
 
@@ -471,14 +448,12 @@ aside {
   background: url(../assets/bullet-next.png) no-repeat;
   width: 70px;
   height: 70px;
-  /* background-position: center; */
 }
 
 .swiper-button-prev {
   background: url(../assets/bullet-prev.png) no-repeat;
   width: 70px;
   height: 70px;
-  /* background-position: center; */
 }
 
 .swiper-button-next::after,
@@ -512,7 +487,6 @@ aside {
   top: 35.05vw;
   /* align-items: left; */
   left: 3.3vw;
-  /* calc(50% + 60px); */
   transform: translateX(-50%);
 
   /* 얼추1000px부터 레이아웃 안무너짐 */
@@ -555,17 +529,9 @@ aside {
 }
 
 .banner {
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* align-items: center; */
-  /* overflow: hidden; */
   max-width: 1920px;
   height: 177px;
   margin: 0 auto;
-  /* left: calc(50% - 2124px / 2 + 0.21px);
-  top: calc(50% - 177px / 2 - 0.22px); */
-  /* background: url(../assets/img_frame.png) no-repeat;
-  background-position: center; */
 }
 .banner img {
   width: 100%;
