@@ -84,7 +84,7 @@ const autoPlayBtn = document.querySelector(
 const autoPlayState =
   autoPlayBtn.getAttribute("aria-pressed");
 
-const thisSlide = new Swiper(".swiper", {
+const thisSlide = new Swiper(".main-visual", {
   // loop: true,
   speed: 1500,
   slidesPerView: 1,
@@ -114,6 +114,19 @@ const thisSlide = new Swiper(".swiper", {
         }
       });
     },
+  },
+});
+
+const eventSwiper = new Swiper(".event", {
+  slidesPerView: "auto",
+  spaceBetween: 8,
+  keyboard: {
+    enabled: true,
+  },
+  loop: false,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
 });
 

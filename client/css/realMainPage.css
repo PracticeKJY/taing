@@ -1,27 +1,6 @@
 @import url(./common/normalize.css);
 @import url(./common/reset.css);
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-.deactive {
-  background-color: transparent;
-  transition-duration: 0.5s;
-  transition-timing-function: ease;
-  -webkit-transition-duration: 0.4s;
-  -webkit-transition-timing-function: ease;
-}
-.active {
-  background-color: var(--black);
-  transition-duration: 0.5s;
-  transition-timing-function: ease;
-  -webkit-transition-duration: 0.4s;
-  -webkit-transition-timing-function: ease;
-}
-
 body {
   background-color: var(--black);
   color: var(--white);
@@ -30,15 +9,6 @@ body {
 a {
   text-decoration: none;
   color: inherit;
-}
-
-ol,
-ul {
-  list-style-type: none;
-}
-
-h2 {
-  color: var(--white);
 }
 
 .a11y-hidden,
@@ -50,7 +20,7 @@ legend {
   clip-path: polygon(0 0, 0 0, 0 0);
 }
 
-/* ---------------------------- 내 작업 부분(헤더+메인비주얼) --------------------------- */
+/* ----------------------------------- 공통 ----------------------------------- */
 
 .header {
   display: flex;
@@ -126,8 +96,9 @@ nav {
   color: var(--gray-200);
 }
 
+/*  개발자도구-> 기기툴바전환 선택시 aside자체가 옆으로 밀리는 이슈 발생 (모바일기준, 150px을 주면 보임) */
+
 aside {
-  /*  개발자도구-> 기기툴바전환 선택시 aside자체가 옆으로 밀리는 이슈 발생 (모바일기준, 150px을 주면 보임) */
   margin-left: auto;
 }
 
@@ -151,6 +122,7 @@ aside {
   height: 40px;
 }
 
+/* 공통 swiper  */
 .main-visual {
   position: relative;
   width: 100%;
@@ -179,13 +151,6 @@ aside {
   height: 100%;
 }
 
-/* .swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */
-
 .main-visual.swiper .swiper-slide img {
   display: block;
   width: 100%;
@@ -193,6 +158,36 @@ aside {
   object-fit: cover;
 }
 
+/* 스와이퍼 호버시,  */
+
+/* .swiper .swiper-slide {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  transition: all 0.3s;
+} */
+
+/* .swiper .swiper-slide:hover {
+  transform: translateY(-10px);
+  box-shadow: -1px 4px 24px -7px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: -1px 4px 24px -7px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: -1px 4px 24px -7px rgba(0, 0, 0, 0.7);
+} */
+
+/* .swiper .swiper-slide a {
+  display: block;
+  height: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.swiper .swiper-slide img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+  object-fit: cover;
+} */
+
+/* p태그 + 자세히보기상자 */
 /* 트렌지션 효과를 주려했으나, 해상도가 줄어들 때 즉각 반응을 못하는 이슈가 발생 */
 .text-wrap {
   position: absolute;
@@ -205,8 +200,8 @@ aside {
 }
 
 .text-wrap p {
-  font-size: var(--text-size-l);
-  color: var(--white);
+  font-size: var(--text-size-xl);
+  font: var(--text-paragraph);
 }
 
 .test001 {
@@ -239,122 +234,6 @@ aside {
   display: none;
 }
 
-/* --------------------------------------------------- */
-
-.bullet-wrap {
-  /* position: absolute; */
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  align-items: center;
-  padding: 0px;
-  gap: 20px;
-}
-
-.bullet-wrap .swiper-pagination {
-  width: 140px;
-  /* margin-left: 10px; */
-}
-
-.swiper-pagination-bullet {
-  background-color: var(--white);
-  width: 12px;
-  height: 12px;
-}
-
-.wrap-autoplay-control {
-  background-color: red;
-  /* position: absolute; */
-  /* z-index: 10; */
-  bottom: 10%;
-  /* bottom: 92px; */
-  /* top: 813px; */
-  /* top: 35.05vw; */
-  /* align-items: left; */
-  left: 3.5vw;
-  /* transform: translateX(-50%); */
-
-  /* 얼추1000px부터 레이아웃 안무너짐 */
-  /* top:34.75vw;
-  left:2.2vw; */
-}
-.wrap-autoplay-control button {
-  display: block;
-  width: 20px;
-  height: 20px;
-  border: 0;
-  /* background: transparent; */
-  background-color: blueviolet;
-  cursor: pointer;
-}
-.wrap-autoplay-control button::before {
-  /* background-color: blue; */
-  position: absolute;
-  display: block;
-  content: "";
-  /* right: 150px; */
-  width: 15px;
-  height: 15px;
-}
-.wrap-autoplay-control button[aria-pressed="false"]:before {
-  /* top: -5vw; */
-  /* left: -25.6vw; */
-  display: block;
-  content: "";
-  background: url(../assets/main/Icon/icon_pause.png)
-    no-repeat;
-  width: 200px;
-  height: 200px;
-  /* box-sizing: border-box; */
-}
-.wrap-autoplay-control button[aria-pressed="true"]:before {
-  display: block;
-  content: "";
-  width: 200px;
-  height: 200px;
-  background: url(../assets/main/Icon/icon_start.png)
-    no-repeat;
-  /* box-sizing: border-box; */
-}
-
-.banner {
-  /* max-width: 1920px; */
-  height: 177px;
-  margin: 0 auto;
-}
-.banner img {
-  width: 100%;
-  height: auto;
-}
-
-/* 이벤트 */
-
-.event h2 {
-  font: var(--text-heading);
-  font-size: var(--text-size-xl);
-}
-
-.event {
-  padding: 0 8px;
-  margin-bottom: 16px;
-}
-.swiper .swiper-slide a {
-  display: block;
-  height: 100%;
-  border-radius: 6px;
-  overflow: hidden;
-}
-/* .swiper .swiper-slide img {
-  width: 100%;
-  display: block;
-  border-radius: 6px;
-  object-fit: cover;
-} */
-
-.event.swiper .swiper-slide {
-  width: 346px;
-}
-
 /* -------------------------------- 모바일 디바이스 -------------------------------- */
 
 @media (min-width: 320px) and (max-width: 767px) {
@@ -379,6 +258,20 @@ aside {
     display: none;
   }
 
+  .text-wrap p {
+    font-size: var(--text-size-s);
+    font: var(--text-label);
+  }
+
+  .test001 {
+    height: 27px;
+    /* 혹은 9.7 */
+    /* width: 18vw; */
+    width: 70px;
+    height: 27px;
+    font-size: var(--text-size-s);
+  }
+
   .swiper-button-prev {
     background: url(../assets/main/Icon/icon_prev-button.png)
       no-repeat;
@@ -395,39 +288,11 @@ aside {
     /* background-position: center; */
   }
 
-  .wrap-autoplay-control {
-    /* transform: translateX(-50%); */
-    top: 35.55vw;
-    left: 2.2vw;
-  }
-
-  .wrap-autoplay-control button {
-    /* display: block; */
-    width: 12px;
-    height: 12px;
-    /* border: 0;
-    background: transparent;
-    cursor: pointer; */
-  }
-
   .swiper-pagination-bullet {
     /* display: inline-block;
     background-color: var(--white); */
     width: 8px;
     height: 8px;
-  }
-
-  .test001 {
-    height: 27px;
-    /* 혹은 9.7 */
-    /* width: 18vw; */
-    width: 70px;
-    height: 27px;
-    font-size: var(--text-size-s);
-  }
-
-  .event.swiper .swiper-slide {
-    width: 145px;
   }
 }
 
@@ -457,16 +322,9 @@ aside {
     width: 24px;
     height: 24px;
   }
-
-  .swiper-pagination {
-    margin-left: 50px;
-  }
-
-  .swiper-pagination-bullet {
-    /* display: inline-block;
-    background-color: var(--white); */
-    width: 10px;
-    height: 10px;
+  .text-wrap p {
+    font-size: var(--text-size-m);
+    font: var(--text-label);
   }
 
   .test001 {
@@ -475,9 +333,8 @@ aside {
     /* font-size: 1.83vw; */
     gap: 12px;
 
-    /* width: 128px ; */
     width: 128px;
-    height: 44px;
+    /* height: 44px; */
     font-size: var(--text-size-s);
   }
 
@@ -494,8 +351,5 @@ aside {
     width: 40px;
     height: 40px;
     /* background-position: center; */
-  }
-  .event.swiper .swiper-slide {
-    width: 222px;
   }
 }

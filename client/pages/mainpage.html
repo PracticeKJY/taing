@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="../css/realMainPage.css" />
+    <link rel="stylesheet" href="../css/common/theme.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script defer src="../js/main-visual.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ------------------------------- header -------------------------------- -->
+    <header class="header deactive">
+      <h1 class="logo">
+        <a href="#">
+          <picture>
+            <source
+              media="(max-width: 1199px)"
+              srcset="../assets/main/Icon/icon_logo@2x.png"
+            />
+            <img
+              src="../assets/main/Icon/icon_logo@3x.png"
+              alt="TAING
+                로고"
+            />
+          </picture>
+        </a>
+      </h1>
+      <nav class="navigation">
+        <ul class="gnb">
+          <li class="gnb-live">
+            <a href="#">실시간</a>
+          </li>
+          <li class="gnb-tv">
+            <a href="#">TV프로그램</a>
+          </li>
+          <li class="gnb-movie">
+            <a href="#">영화</a>
+          </li>
+          <li class="gnb-paramount">
+            <a href="#"
+              ><picture>
+                <source
+                  media="(max-width: 1199px)"
+                  srcset="
+                    ../assets/main/Icon/icon_paramount@2x.png
+                  "
+                />
+                <img
+                  src="../assets/main/Icon/icon_paramount@3x.png"
+                  alt="찾기 아이콘"
+                />
+              </picture>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <aside>
+        <button type="button" class="search">
+          <picture>
+            <source
+              media="(max-width: 767px)"
+              srcset="../assets/main/Icon/icon_search.png"
+            />
+            <source
+              media="(max-width: 1199px)"
+              srcset="
+                ../assets/main/Icon/icon_search@2x.png
+              "
+            />
+            <img
+              src="../assets/main/Icon/icon_search@3x.png"
+              alt="찾기 아이콘"
+            />
+          </picture>
+        </button>
+        <button type="button" class="profile">
+          <picture>
+            <source
+              media="(max-width: 767px)"
+              srcset="../assets/main/Icon/icon_profile.png"
+            />
+            <source
+              media="(max-width: 1199px)"
+              srcset="
+                ../assets/main/Icon/icon_profile@2x.png
+              "
+            />
+            <img
+              src="../assets/main/Icon/icon_profile@3x.png"
+              alt="프로필 아이콘"
+            />
+          </picture>
+        </button>
+      </aside>
+    </header>
+    <!-- ------------------------------- swiper -------------------------------- -->
+    <section class="main-visual swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="swiper-contents">
+            <picture>
+              <source
+                media="(max-width: 767px)"
+                srcset="
+                  ../assets/main/main-visual/main-visual-mobile.png
+                "
+              />
+              <source
+                media="(max-width: 1199px)"
+                srcset="
+                  ../assets/main/main-visual/main-visual-tablet.png
+                "
+              />
+              <img
+                src="../assets/main/main-visual/main-visual-slide1.png"
+                alt="막내집 재벌아들"
+              />
+            </picture>
+            <div class="text-wrap">
+              <p>인생 2회차를 사는 판타지 드라마</p>
+              <a href="#" class="test001">자세히보기</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-contents">
+            <a href="#">
+              <div class="text-wrap">
+                <p>이혼 전문 변호사들의 인생 성장기</p>
+                <a href="#" class="test001">자세히보기</a>
+              </div>
+              <img
+                src="../assets/main/main-visual/main-visual-slide2.jpg"
+                alt="막내집 재벌아들"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-contents">
+            <a href="#">
+              <div class="text-wrap">
+                <p>전율을 느끼게 할 블록버스터</p>
+                <a href="#" class="test001">자세히보기</a>
+              </div>
+              <img
+                src="../assets/main/main-visual/main-visual-slide3.jpg"
+                alt="막내집 재벌아들"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-contents">
+            <a href="#">
+              <div class="text-wrap">
+                <p>촬영장에서 김남길이 혼난 사연은?🙊</p>
+                <a href="#" class="test001">자세히보기</a>
+              </div>
+              <img
+                src="../assets/main/main-visual/main-visual-slide4.jpg"
+                alt="막내집 재벌아들"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="bullet-wrap">
+        <div class="wrap-autoplay-control">
+          <button
+            aria-pressed="false"
+            aria-label="자동 재생 일시정지"
+          ></button>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+    <main>2</main>
+    <footer>3</footer>
+  </body>
+</html>
