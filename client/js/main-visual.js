@@ -24,35 +24,35 @@
 /* ---------------------------------- 해결방안3 --------------------------------- */
 /* --------------------------- class를 추가해서 조종하는방식 --------------------------- */
 
+// const header = document.querySelector(".header");
+// console.log(header);
+
+// window.addEventListener("scroll", () => {
+//   if (window.pageYOffset > 1) {
+//     header.classList.remove("deactive");
+//     header.classList.add("active");
+//   } else {
+//     header.classList.remove("active");
+//     header.classList.add("deactive");
+//   }
+// });
+
+/* ---------------------------------- 해결방안2 --------------------------------- */
+/* ------------------ setattribute를 이용해, style을 직접적으로 주는방식 ------------------ */
+
 const header = document.querySelector(".header");
 console.log(header);
 
 window.addEventListener("scroll", () => {
   if (window.pageYOffset > 100) {
-    header.classList.remove("deactive");
-    header.classList.add("active");
+    header.setAttribute(
+      "style",
+      "background: var(--black)"
+    );
   } else {
-    header.classList.remove("active");
-    header.classList.add("deactive");
+    header.setAttribute("style", "background: transparent");
   }
 });
-
-/* ---------------------------------- 해결방안2 --------------------------------- */
-/* ------------------ setattribute를 이용해, style을 직접적으로 주는방식 ------------------ */
-
-// const header = document.querySelector(".header");
-// console.log(header);
-
-// window.addEventListener("scroll", () => {
-//   if (window.pageYOffset > 100) {
-//     header.setAttribute(
-//       "style",
-//       "background: var(--black)"
-//     );
-//   } else {
-//     header.setAttribute("style", "background: transparent");
-//   }
-// });
 
 /* ----------------------------------- 해결방안1 ---------------------------------- */
 
@@ -81,14 +81,16 @@ window.addEventListener("scroll", () => {
 const autoPlayBtn = document.querySelector(
   ".wrap-autoplay-control > button"
 );
+const autoPlayState =
+  autoPlayBtn.getAttribute("aria-pressed");
 
-const thisSlide = new Swiper(".mySwiper", {
-  loop: true,
+const thisSlide = new Swiper(".swiper", {
+  // loop: true,
   speed: 1500,
   slidesPerView: 1,
-  autoplay: {
-    delay: 2000,
-  },
+  // autoplay: {
+  //   delay: 2000,
+  // },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -97,17 +99,11 @@ const thisSlide = new Swiper(".mySwiper", {
     el: ".swiper-pagination",
     clickable: true,
   },
-  // a11y: {
-  //   prevSlideMessage: "이전 슬라이드",
-  //   nextSlideMessage: "다음 슬라이드",
-  //   slideLabelMessage:
-  //     "총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.",
-  // },
+
   on: {
     init: function () {
       autoPlayBtn.addEventListener("click", () => {
-        const autoPlayState =
-          autoPlayBtn.getAttribute("aria-pressed");
+        console.log(autoPlayState);
 
         if (autoPlayState === "false") {
           autoPlayBtn.setAttribute("aria-pressed", "true");
@@ -120,6 +116,15 @@ const thisSlide = new Swiper(".mySwiper", {
     },
   },
 });
+
+// const pagingSwiper = new Swiper(".main-visual", {
+//   pagination: {
+//     el: ".swiper-pagination2",
+//     type: "fraction",
+//   },
+// });
+
+// thisSlide.controller.control = pagingSwiper;
 
 //-------------------------------------------------------------------------
 // const autoPlayBtn = document.querySelector(

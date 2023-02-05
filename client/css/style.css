@@ -279,7 +279,7 @@ legend {
   );
   position: fixed;
   z-index: 999;
-  width: 100%;
+  width: 100vw;
 }
 
 /* 로고이미지(taing)도 같이 작아지게 하고싶었으나 대실패  */
@@ -430,10 +430,10 @@ aside {
 }
 
 .swiper-pagination {
-  display: absolute;
+  display: flex;
   text-align: left;
   width: 100px;
-  top: 80%;
+  top: 34vw;
   margin-left: 5vw;
 }
 
@@ -486,7 +486,7 @@ aside {
   /* top: 813px; */
   top: 35.05vw;
   /* align-items: left; */
-  left: 3.3vw;
+  left: 3.5vw;
   transform: translateX(-50%);
 
   /* 얼추1000px부터 레이아웃 안무너짐 */
