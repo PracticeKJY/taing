@@ -54,16 +54,20 @@ legend {
 .swiperQV,
 .swiperLP,
 .swiperRP,
-.swiperOT {
+.swiperOT,
+.swiperEV {
   padding: 0 8px;
   margin-bottom: 16px;
 }
 .swiperQV h2,
 .swiperLP h2,
 .swiperRP h2,
-.swiperOT h2 {
+.swiperOT h2,
+.swiper h2 {
   padding: 0 8px;
   margin-bottom: 16px;
+  font: var(--text-heading);
+  font-size: var(--text-size-xl);
 }
 /* ---------------------------- 전체 스와이퍼 슬라이드의 a태그 --------------------------- */
 .swiperQV .swiper-slide a {
@@ -90,6 +94,12 @@ legend {
   border-radius: 6px;
   overflow: hidden;
 }
+.swiperEV .swiper-slide a {
+  display: block;
+  height: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+}
 /* --------------------------- 전체 스와이퍼 슬라이드의 img태그(변수명으로 못하나?) -------------------------- */
 .swiperOT .swiper-slide img {
   width: 100%;
@@ -110,6 +120,12 @@ legend {
   object-fit: cover;
 }
 .swiperLP .swiper-slide img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+  object-fit: cover;
+}
+.swiperEV .swiper-slide img {
   width: 100%;
   display: block;
   border-radius: 6px;
@@ -265,6 +281,11 @@ legend {
   width: 139px;
 }
 
+/* 이벤트 */
+.event.swiper .swiper-slide {
+  width: 285px;
+}
+
 /* ---------------------------- 내 작업 부분(헤더+메인비주얼) --------------------------- */
 
 .header {
@@ -280,7 +301,7 @@ legend {
   );
   position: fixed;
   z-index: 999;
-  width: 100%;
+  width: 100vw;
 }
 
 /* 로고이미지(taing)도 같이 작아지게 하고싶었으나 대실패  */
@@ -299,7 +320,7 @@ legend {
 
 /* 전체적으로 logo와 nav를 같이 작아지게 하고싶었으나 대실패 */
 nav {
-  margin-left: 3vw;
+  margin-left: 50px; /*3vw*/
 }
 
 .gnb {
@@ -309,13 +330,13 @@ nav {
 }
 
 .gnb-live::before {
-  content: url(../assets/Live.png);
+  content: url(../assets/main/Icon/icon_live@3x.png);
   vertical-align: middle;
 }
 
 .gnb-live {
   cursor: pointer;
-  margin-right: 3vw; /* 1.5vw = 30px */
+  margin-right: 30px; /* 3vw*/
   font: var(--text-paragraph);
   font-size: var(--text-size-l);
   color: var(--gray-200);
@@ -325,22 +346,18 @@ nav {
   margin-top: 3px;
 }
 
-.gnb-Tv {
+.gnb-tv {
   cursor: pointer;
-  margin-right: 3vw;
+  margin-right: 30px;
   font: var(--text-paragraph);
   font-size: var(--text-size-l);
   color: var(--gray-200);
   width: auto;
 }
 
-/* .gnb-Tv a {
-  width: 200px;
-} */
-
-.gnb-Movie {
+.gnb-movie {
   cursor: pointer;
-  margin-right: 3vw;
+  margin-right: 30px;
   font: var(--text-paragraph);
   font-size: var(--text-size-l);
   color: var(--gray-200);
@@ -351,12 +368,12 @@ aside {
   margin-left: auto;
 }
 
-.button {
-  margin-right: 10px;
+.search {
   background: transparent;
   border: none;
   width: 40px;
   height: 40px;
+  margin-right: 10px;
 }
 
 .profile {
@@ -371,7 +388,8 @@ aside {
   height: 40px;
 }
 
-.swiper {
+/* 이거봐달라고하자 있으나없으나 똑같은건가? */
+.main-visual .swiper {
   position: relative;
   width: 100%;
   height: 100%;
@@ -410,7 +428,7 @@ aside {
 /* 트렌지션 효과를 주려했으나, 해상도가 줄어들 때 즉각 반응을 못하는 이슈가 발생 */
 .text-wrap {
   position: absolute;
-  top: 30.45vw;
+  top: 31.45vw;
   left: 4vw;
   width: 550px;
   height: 40px;
@@ -422,15 +440,14 @@ aside {
 
 .swiper-slide-active .text-wrap {
   opacity: 1;
-  top: 30.45vw;
-  left: 4vw;
   /* transition: 0.5s; */
 }
 
 .text-wrap p {
   width: 900px;
   height: 100%;
-  font-size: 1.8vw;
+  font-size: var(--text-size-xl);
+  /* 1.8vw; */
   color: var(--white);
 }
 
@@ -438,8 +455,8 @@ aside {
   display: absolute;
   text-align: left;
   width: 100px;
-  top: 80%;
-  margin-left: 5vw;
+  top: 78%;
+  margin-left: 5.5vw;
 }
 
 .swiper-pagination-bullet {
@@ -450,13 +467,15 @@ aside {
 }
 
 .swiper-button-next {
-  background: url(../assets/bullet-next.png) no-repeat;
+  background: url(../assets/main/Icon/icon_next-button@3x.png)
+    no-repeat;
   width: 70px;
   height: 70px;
 }
 
 .swiper-button-prev {
-  background: url(../assets/bullet-prev.png) no-repeat;
+  background: url(../assets/main/Icon/icon_prev-button@3x.png)
+    no-repeat;
   width: 70px;
   height: 70px;
 }
@@ -486,13 +505,10 @@ aside {
   /* background-color: red; */
   position: absolute;
   z-index: 10;
-  /* bottom: 10%; */
-  /* bottom: 92px; */
-  /* top: 813px; */
-  top: 35.05vw;
-  /* align-items: left; */
-  left: 3.3vw;
-  transform: translateX(-50%);
+  /* top: 485px; */
+  top: 78%;
+  left: 3.4vw;
+  transform: translateY(-50%);
 
   /* 얼추1000px부터 레이아웃 안무너짐 */
   /* top:34.75vw;
@@ -535,8 +551,8 @@ aside {
 
 .banner {
   max-width: 1920px;
-  height: 177px;
-  margin: 0 auto;
+  /* height: 177px; */
+  margin: 28px auto;
 }
 .banner img {
   width: 100%;
@@ -674,36 +690,62 @@ footer::before {
   }
 
   .swiper-button-prev {
-    background: url(../assets/prev-button@1x.png) no-repeat;
+    background: url(../assets/main/Icon/icon_prev-button.png)
+      no-repeat;
     width: 14px;
     height: 14px;
     /* background-position: center; */
   }
 
   .swiper-button-next {
-    background: url(../assets/next-button@1x.png) no-repeat;
+    background: url(../assets/main/Icon/icon_next-button.png)
+      no-repeat;
     width: 14px;
     height: 14px;
     /* background-position: center; */
   }
 
   .wrap-autoplay-control {
-    /* transform: translateX(-50%); */
-    top: 35.55vw;
-    left: 2.2vw;
+    top: 34.3vw;
+    left: 3vw;
+    /* top: 33vw;
+    margin-left: 38px; */
   }
 
   .wrap-autoplay-control button {
     /* display: block; */
-    width: 12px;
-    height: 12px;
+    width: 20px;
+    height: 20px;
     /* border: 0;
     background: transparent;
     cursor: pointer; */
   }
 
+  .wrap-autoplay-control
+    button[aria-pressed="false"]:before {
+    width: 11px;
+    height: 11px;
+    border-left: 3px solid #fff;
+    border-right: 3px solid #fff;
+  }
+  .wrap-autoplay-control
+    button[aria-pressed="true"]:before {
+    width: 11px;
+    height: 11px;
+    border-left: 3px solid #fff;
+    border-right: 3px solid #fff;
+  }
+  .text-wrap {
+    top: 30vw;
+  }
+
+  .text-wrap p {
+    font-size: var(--text-size-s);
+  }
+
   .swiper-pagination {
-    margin-left: 33px;
+    top: 33.3vw;
+    margin-left: 40px;
   }
 
   .swiper-pagination-bullet {
@@ -720,6 +762,10 @@ footer::before {
     width: 90px;
     height: 27px;
     font-size: var(--text-size-s);
+  }
+
+  .event.swiper .swiper-slide {
+    width: 145px;
   }
 
   /* -------------------------------- footer 시작 ------------------------------- */
@@ -771,10 +817,19 @@ footer::before {
     height: 24px; /* =42px*/
   }
 
+  .gnb-live {
+    font-size: var(--text-size-s);
+  }
+  .gnb-tv {
+    font-size: var(--text-size-s);
+  }
+  .gnb-movie {
+    font-size: var(--text-size-s);
+  }
   /* --------------------------------- 작아도너무작아 -------------------------------- */
-  /* .gnb-live::before {
-    content: url(../assets/live@1x.png);
-  } */
+  .gnb-live::before {
+    content: url(../assets/main/Icon/icon_live.png);
+  }
 
   .button {
     width: 24px;
@@ -786,8 +841,12 @@ footer::before {
     height: 24px;
   }
 
+  .wrap-autoplay-control {
+    left: 3.2vw;
+  }
+
   .swiper-pagination {
-    margin-left: 50px;
+    margin-left: 60px;
   }
 
   .swiper-pagination-bullet {
@@ -809,17 +868,27 @@ footer::before {
     font-size: var(--text-size-s);
   }
 
+  .text-wrap p {
+    font-size: var(--text-size-m);
+  }
+
   .swiper-button-prev {
-    background: url(../assets/prev-button@2x.png) no-repeat;
+    background: url(../assets/main/Icon/icon_prev-button@2x.png)
+      no-repeat;
     width: 40px;
     height: 40px;
     /* background-position: center; */
   }
   .swiper-button-next {
-    background: url(../assets/next-button@2x.png) no-repeat;
+    background: url(../assets/main/Icon/icon_next-button@2x.png)
+      no-repeat;
     width: 40px;
     height: 40px;
     /* background-position: center; */
+  }
+
+  .event.swiper .swiper-slide {
+    width: 214px;
   }
 
   /* -------------------------------- footer 시작 ------------------------------- */
