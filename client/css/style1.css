@@ -51,228 +51,30 @@ legend {
 }
 
 /* --------------------------------- 전체 스와이퍼 (ver.정현님 start) -------------------------------- */
-.swiper {
+.event.swiper {
   padding: 0 8px;
   margin-bottom: 16px;
 }
 
-.swiper h2 {
+.event.swiper h2 {
   padding: 0 8px;
   margin-bottom: 16px;
   font: var(--text-heading);
   font-size: var(--text-size-xl);
 }
 /* ---------------------------- 전체 스와이퍼 슬라이드의 a태그 --------------------------- */
-.swiperQV .swiper-slide a {
+
+
+.event.swiper .swiper-slide a {
   display: block;
   height: 100%;
   border-radius: 6px;
   overflow: hidden;
 }
-.swiperLP .swiper-slide a {
-  display: block;
-  height: 100%;
-  border-radius: 6px;
-  overflow: hidden;
-}
-.swiperRP .swiper-slide a {
-  display: block;
-  height: 100%;
-  border-radius: 6px;
-  overflow: hidden;
-}
-.swiperOT .swiper-slide a {
-  display: block;
-  height: 100%;
-  border-radius: 6px;
-  overflow: hidden;
-}
-.swiperEV .swiper-slide a {
-  display: block;
-  height: 100%;
-  border-radius: 6px;
-  overflow: hidden;
-}
-/* --------------------------- 전체 스와이퍼 슬라이드의 img태그(변수명으로 못하나?) -------------------------- */
-.swiperOT .swiper-slide img {
-  width: 100%;
-  display: block;
-  border-radius: 6px;
-  object-fit: cover;
-}
-.swiperQV .swiper-slide img {
-  width: 100%;
-  display: block;
-  border-radius: 6px;
-  object-fit: cover;
-}
-.swiperRP .swiper-slide img {
-  width: 100%;
-  display: block;
-  border-radius: 6px;
-  object-fit: cover;
-}
-.swiperLP .swiper-slide img {
-  width: 100%;
-  display: block;
-  border-radius: 6px;
-  object-fit: cover;
-}
-.swiperEV .swiper-slide img {
-  width: 100%;
-  display: block;
-  border-radius: 6px;
-  object-fit: cover;
-}
 
-/* ---------------------------------- 공통 뱃지 --------------------------------- */
-.swiper-slide.badge {
-  position: relative;
-}
 
-.swiper-slide.badge::before {
-  display: block;
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  padding: 4px 8px;
-  font-size: 10px;
-  border-radius: 4px;
-}
-
-/* --------------------------------- 메인 컨텐츠 --------------------------------- */
-/* ----------------------------- 타잉에서 꼭 봐야하는 콘텐츠 ---------------------------- */
-
-.recommend-taing .swiper-slide {
-  width: 92px;
-}
-
-/* -------------------------------- quick VOD ------------------------------- */
-.quick-vod .swiper-slide {
-  width: 145px;
-}
-
-.quick-vod .swiper-slide h3 {
-  margin-top: 4px;
-  font: var(--text-heading);
-  font-size: var(--text-size-s);
-  color: var(--gray-200);
-}
-
-.quick-vod .swiper-slide p {
-  font: var(--text-label);
-  font-size: var(--text-size-s);
-  color: var(--gray-300);
-}
-
-.swiper-slide.badge-quick-vod::before {
-  content: "Quick VOD";
-  background-color: var(--badge-pink);
-}
-
-/* ------------------------------- 실시간 인기 프로그램 ------------------------------ */
-.realtime-popular .swiper-slide {
-  width: 92px;
-}
-
-.realtime-popular .swiper-slide a {
-  position: relative;
-  padding-bottom: 28px;
-}
-
-.realtime-popular .swiper-slide .item-info {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  display: flex;
-  flex-flow: row nowrap;
-  gap: 8px;
-}
-
-.realtime-popular .swiper-slide .rank-number {
-  font: var(--text-heading);
-  font-size: var(--text-size-xxl);
-  line-height: var(--text-size-xxl);
-  font-style: italic;
-}
-
-.realtime-popular .swiper-slide p {
-  position: relative;
-  padding-right: 8px;
-  margin-top: 20px;
-  font: var(--text-label);
-  font-size: var(--text-size-s);
-  line-height: var(--text-size-s);
-  color: var(--gray-300);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.realtime-popular .swiper-slide p::after {
-  display: block;
-  content: "";
-  width: 4px;
-  height: 4px;
-  position: absolute;
-  bottom: var(--text-size-s);
-  right: 0;
-  background-color: var(--brand-red-1);
-  border-radius: 50%;
-}
-
-/* ------------------------------- 인기 LIVE 채널 ------------------------------- */
-.live-popular .swiper-slide {
-  width: 145px;
-}
-
-.live-popular .swiper-slide .item-info {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  gap: 16px;
-  margin-top: 4px;
-}
-
-.live-popular .item-info .rank-number {
-  font: var(--text-heading);
-  font-size: var(--text-size-xxl);
-  font-style: italic;
-  color: var(--white);
-}
-
-.live-popular .item-info .program-info {
-  overflow: hidden;
-}
-
-.live-popular .item-info h3 {
-  font: var(--text-label);
-  font-size: var(--text-size-s);
-  color: var(--gray-200);
-  line-height: var(--text-size-s);
-}
-
-.live-popular .item-info h3 span {
-  display: block;
-  font: var(--text-paragraph);
-  font-size: var(--text-size-s);
-  color: var(--gray-300);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.live-popular .item-info p {
-  font: var(--text-paragraph);
-  font-size: var(--text-size-s);
-  line-height: var(--text-size-s);
-  color: var(--gray-300);
-}
 
 /* ------------------------------- 오직 타잉에만 있어요(ver.정현님 end) ------------------------------ */
-.only-taing.swiper .swiper-slide {
-  width: 139px;
-}
 
 /* 이벤트 */
 .event.swiper .swiper-slide {
@@ -388,7 +190,7 @@ aside {
   height: 100%;
 }
 
-.swiper-slide {
+.main-visual .swiper-slide {
   text-align: center;
   font-size: 16px;
   /* Center slide text vertically */
@@ -474,21 +276,6 @@ aside {
   display: none;
 }
 
-/* .test001 {
-  font: var(--text-paragraph);
-  font-size: var(--text-size-l);
-  color: var(--white);
-  background: inherit;
-  position: absolute;
-  z-index: 1;
-  bottom: 8.8vw;
-  right: 6vw;
-  width: 221px;
-  height: 78px;
-  border: 1px solid var(--gray-300);
-  border-radius: 4px;
-} */
-
 .test001 {
   display: block;
   font: var(--text-paragraph);
@@ -550,117 +337,15 @@ aside {
 }
 
 .banner {
-  /* --------------------------- max-width: 1920px; --------------------------- */
-
-  /* height: 177px; */
-  margin: 28px auto;
+width:100%;
+  margin: 0 8px 70px 8px ;
+  
 }
 .banner img {
   width: 100%;
   height: auto;
 }
 
-/* -------------------------------- footer 시작 ------------------------------- */
-
-footer {
-  padding: 8.75rem 4.25rem 10.625rem;
-}
-
-footer::before {
-  content: "";
-  display: block;
-  background-color: var(--gray-800);
-  width: 100%;
-  height: 1px;
-}
-
-.footer-info-list {
-  margin-top: 1.5rem;
-}
-
-.footer-info-list a {
-  color: var(--gray-500);
-}
-.footer-info-list a:hover {
-  color: var(--gray-400);
-  transition: color;
-  transition-duration: 200ms;
-}
-
-.footer-info-list li {
-  font-size: var(--text-size-l);
-}
-
-.guide-list {
-  margin-top: 1.75rem;
-}
-
-.guide-list a {
-  color: var(--gray-200);
-  text-decoration: none;
-}
-
-.guide-list li:last-child {
-  margin-bottom: 0;
-}
-
-.guide-list a:hover {
-  color: var(--gray-100);
-  transition: color;
-  transition-duration: 300ms;
-  transition-timing-function: ease;
-}
-
-.guide-list li {
-  font: var(--text-paragraph);
-  display: inline;
-  margin-right: 2.25rem;
-  font-size: var(--text-size-l);
-}
-
-.footer-info-list li {
-  color: var(--gray-500);
-}
-
-.footer-info-list span:not(:first-of-type)::before,
-.footer-info-list a:not(:first-of-type)::before {
-  content: "";
-  display: inline-block;
-  width: 1px;
-  height: 1rem;
-  margin: 0 8px 0 6px;
-  background-color: var(--gray-800);
-}
-
-.sns-wrapper {
-  margin-top: 1.5rem;
-}
-
-.sns-wrapper a {
-  text-decoration: none;
-  margin-right: 1.25rem;
-}
-
-.sns-wrapper img {
-  width: 3.25rem;
-  height: 3.25rem;
-}
-
-.sns-wrapper img:hover {
-  filter: brightness(180%);
-  transition: filter;
-  transition-duration: 200ms;
-  transition-timing-function: ease;
-}
-
-.copyright {
-  color: var(--gray-500);
-  font: var(--text-paragraph);
-  margin-top: 1.5rem;
-  font-size: var(--text-size-l);
-}
-
-/* -------------------------------- footer 끝 -------------------------------- */
 
 /* -------------------------------- 모바일 디바이스 -------------------------------- */
 
@@ -690,6 +375,20 @@ footer::before {
     display: none;
   }
 
+  .event.swiper {
+    padding: 0 8px;
+    margin-bottom: 16px;
+  }
+  
+  .event.swiper h2 {
+    padding: 0 8px;
+    margin-bottom: 16px;
+    font: var(--text-heading);
+    font-size: var(--text-size-s);
+  }
+
+
+  
   .swiper-button-prev {
     background: url(../assets/main/Icon/icon_prev-button.png)
       no-repeat;
@@ -739,6 +438,7 @@ footer::before {
 
 
   .text-wrap{
+    bottom: 15%;
     padding: 0px 12px;
   }
 
@@ -762,47 +462,15 @@ footer::before {
     height: 8px;
   }
 
-
+  .banner {
+    margin: 0 8px 16px 8px ;
+}
 
   .event.swiper .swiper-slide {
     width: 145px;
   }
 
-  /* -------------------------------- footer 시작 ------------------------------- */
 
-  footer {
-    padding: 3.25rem 1rem 5.125rem 1rem;
-  }
-
-  .guide-list {
-    margin-top: 0.5rem;
-  }
-
-  .guide-list li {
-    margin-bottom: 0.25rem;
-  }
-  .guide-list li:last-child {
-    margin-bottom: 0;
-  }
-
-  .footer-info-list {
-    display: none;
-  }
-
-  .sns-wrapper {
-    margin-top: 1rem;
-  }
-
-  .sns-wrapper a {
-    margin-right: 0.5rem;
-  }
-
-  .copyright {
-    margin-top: 1rem;
-    font-size: var(--text-size-s);
-  }
-
-  /* -------------------------------- footer 끝 -------------------------------- */
 }
 
 /* -------------------------------- 태블릿 디바이스 -------------------------------- */
@@ -857,7 +525,7 @@ footer::before {
   }
 
 .text-wrap{
-  padding: 0px 40px;
+  padding: 0px 30px;
 }
 
   .test001 {
@@ -870,26 +538,17 @@ footer::before {
 
   }
 
-  .swiper {
+  .event.swiper {
     padding: 0 8px;
     margin-bottom: 16px;
   }
   
-  .swiper h2 {
+  .event.swiper h2 {
     padding: 0 8px;
     margin-bottom: 16px;
     font: var(--text-heading);
     font-size: var(--text-size-m);
   }
-
-
-
-
-
-
-
-
-
 
   .swiper-button-prev {
     background: url(../assets/main/Icon/icon_prev-button@2x.png)
@@ -909,5 +568,10 @@ footer::before {
   .event.swiper .swiper-slide {
     width: 214px;
   }
+
+  .banner {
+    margin: 0 8px 40px 8px ;
+}
+
 
 }

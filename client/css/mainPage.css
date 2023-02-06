@@ -418,11 +418,10 @@ aside {
   }
 
   .test001 {
-    height: 27px;
     /* 혹은 9.7 */
     /* width: 18vw; */
-    width: 70px;
-    height: 27px;
+    /* width: 70px; */
+    /* height: 27px; */
     font-size: var(--text-size-s);
   }
 
