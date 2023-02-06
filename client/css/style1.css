@@ -51,18 +51,11 @@ legend {
 }
 
 /* --------------------------------- 전체 스와이퍼 (ver.정현님 start) -------------------------------- */
-.swiperQV,
-.swiperLP,
-.swiperRP,
-.swiperOT,
-.swiperEV {
+.swiper {
   padding: 0 8px;
   margin-bottom: 16px;
 }
-.swiperQV h2,
-.swiperLP h2,
-.swiperRP h2,
-.swiperOT h2,
+
 .swiper h2 {
   padding: 0 8px;
   margin-bottom: 16px;
@@ -426,17 +419,18 @@ aside {
 }
 
 /* 트렌지션 효과를 주려했으나, 해상도가 줄어들 때 즉각 반응을 못하는 이슈가 발생 */
-.text-wrap {
-  position: absolute;
-  top: 31.45vw;
-  left: 4vw;
-  width: 550px;
-  height: 40px;
-  text-align: left;
-  opacity: 0;
-  z-index: 1;
-  /* transition: 0.2s; */
-}
+
+  .text-wrap {
+    position: absolute;
+    bottom: 20%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 0px 70px;
+    width: 100%;
+  }
+  
+
 
 .swiper-slide-active .text-wrap {
   opacity: 1;
@@ -444,13 +438,8 @@ aside {
 }
 
 .text-wrap p {
-  width: 900px;
-  height: 100%;
-  font-size: var(--text-size-xl);
-  /* 1.8vw; */
-  color: var(--white);
+  font-size: var(--text-size-l);
 }
-
 .swiper-pagination {
   display: absolute;
   text-align: left;
@@ -485,7 +474,7 @@ aside {
   display: none;
 }
 
-.test001 {
+/* .test001 {
   font: var(--text-paragraph);
   font-size: var(--text-size-l);
   color: var(--white);
@@ -496,6 +485,17 @@ aside {
   right: 6vw;
   width: 221px;
   height: 78px;
+  border: 1px solid var(--gray-300);
+  border-radius: 4px;
+} */
+
+.test001 {
+  display: block;
+  font: var(--text-paragraph);
+  font-size: var(--text-size-l);
+  color: var(--white);
+  background: transparent;
+  padding: 22px 64px;
   border: 1px solid var(--gray-300);
   border-radius: 4px;
 }
@@ -736,14 +736,20 @@ footer::before {
     border-left: 3px solid #fff;
     border-right: 3px solid #fff;
   }
-  .text-wrap {
-    top: 30vw;
+
+
+  .text-wrap{
+    padding: 0px 12px;
   }
 
   .text-wrap p {
     font-size: var(--text-size-s);
   }
 
+  .test001 {
+    font-size: var(--text-size-s);
+    padding:4px 6px;
+  }
   .swiper-pagination {
     top: 33.3vw;
     margin-left: 40px;
@@ -756,14 +762,7 @@ footer::before {
     height: 8px;
   }
 
-  .test001 {
-    height: 27px;
-    /* 혹은 9.7 */
-    /* width: 18vw; */
-    width: 90px;
-    height: 27px;
-    font-size: var(--text-size-s);
-  }
+
 
   .event.swiper .swiper-slide {
     width: 145px;
@@ -857,21 +856,40 @@ footer::before {
     height: 10px;
   }
 
-  .test001 {
-    /* padding: 20px 0px; */
-    /* height: 6.5vh; */
-    /* font-size: 1.83vw; */
-    gap: 12px;
+.text-wrap{
+  padding: 0px 40px;
+}
 
-    /* width: 128px ; */
-    width: 128px;
-    height: 44px;
+  .test001 {
     font-size: var(--text-size-s);
+    padding: 12.5px 38px;
   }
 
   .text-wrap p {
     font-size: var(--text-size-m);
+
   }
+
+  .swiper {
+    padding: 0 8px;
+    margin-bottom: 16px;
+  }
+  
+  .swiper h2 {
+    padding: 0 8px;
+    margin-bottom: 16px;
+    font: var(--text-heading);
+    font-size: var(--text-size-m);
+  }
+
+
+
+
+
+
+
+
+
 
   .swiper-button-prev {
     background: url(../assets/main/Icon/icon_prev-button@2x.png)
@@ -892,67 +910,4 @@ footer::before {
     width: 214px;
   }
 
-  /* -------------------------------- footer 시작 ------------------------------- */
-
-  footer {
-    padding: 4.375rem 2.5rem 6.25rem;
-  }
-
-  .guide-list {
-    margin-top: 1rem;
-  }
-
-  .guide-list li {
-    display: inline;
-    margin-right: 1.25rem;
-  }
-
-  .guide-list li:last-child {
-    margin-bottom: 0;
-  }
-
-  .footer-info-list {
-    margin-top: 0.75rem;
-  }
-
-  .footer-info-list a {
-    color: var(--gray-500);
-  }
-  .footer-info-list a:hover {
-    color: var(--gray-400);
-    transition: color;
-    transition-duration: 200ms;
-  }
-
-  .footer-info-list li {
-    font: var(--text-paragraph);
-    font-size: var(--text-size-s);
-  }
-
-  .footer-info-list span:not(:first-of-type)::before,
-  .footer-info-list a:not(:first-of-type)::before {
-    height: 0.625px;
-    margin: 0 4px 0 2px;
-  }
-
-  .sns-wrapper {
-    margin-top: 0.75rem;
-  }
-
-  .sns-wrapper a {
-    margin-right: 0.5rem;
-  }
-
-  .sns-wrapper img {
-    width: 1.875rem;
-    height: 1.875rem;
-  }
-
-  .copyright {
-    margin-top: 0.75rem;
-    font: var(--text-paragraph);
-    font-size: var(--text-size-s);
-  }
-
-  /* -------------------------------- footer 끝 -------------------------------- */
 }
