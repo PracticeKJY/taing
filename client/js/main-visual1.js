@@ -1,3 +1,7 @@
+import { renderContents } from "../lib/dom/contentsList.js";
+import { getNode } from "../lib/dom/getNode.js";
+import { tiger } from "../lib/utils/tiger.js";
+
 // const data = [
 //   {
 //     id: 1,
@@ -20,6 +24,33 @@
 //     alt: "막내집 재벌아들",
 //   },
 // ];
+
+//data.json 통신연결하는방법
+// 1.data.json 작성
+
+// const contentsContainer = getNode(".main-visual");
+const contentsContainer = getNode(".swiper-wrapper");
+
+async function rendingContents() {
+  try {
+    let response = await tiger.get(
+      "http://localhost:3000/contents"
+    );
+    console.log(response);
+    let contentsData = response.data;
+    console.log(contentsData);
+
+    contentsData.forEach((data) => {
+      renderContents(contentsContainer, data);
+    });
+
+    console.log(contentsData);
+  } catch (err) {
+    console.log(err);
+  }
+}
+// let id = attr(swiper-slide,'data-index').slice(5);??
+rendingContents();
 
 /* ---------------------------------- 해결방안3 --------------------------------- */
 /* --------------------------- class를 추가해서 조종하는방식 --------------------------- */
@@ -85,6 +116,7 @@ const autoPlayBtn = document.querySelector(
 const thisSlide = new Swiper(".main-visual", {
   loop: true,
   speed: 1500,
+  roundLengths: true,
   slidesPerView: 1,
   autoplay: {
     delay: 2000,
@@ -103,22 +135,6 @@ const thisSlide = new Swiper(".main-visual", {
   //   slideLabelMessage:
   //     "총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.",
   // },
-  on: {
-    init: function () {
-      autoPlayBtn.addEventListener("click", () => {
-        const autoPlayState =
-          autoPlayBtn.getAttribute("aria-pressed");
-
-        if (autoPlayState === "false") {
-          autoPlayBtn.setAttribute("aria-pressed", "true");
-          thisSlide.autoplay.stop();
-        } else if (autoPlayState === "true") {
-          autoPlayBtn.setAttribute("aria-pressed", "false");
-          thisSlide.autoplay.start();
-        }
-      });
-    },
-  },
 });
 
 const eventSwiper = new Swiper(".event", {

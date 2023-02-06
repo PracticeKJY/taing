@@ -64,15 +64,12 @@ legend {
 }
 /* ---------------------------- 전체 스와이퍼 슬라이드의 a태그 --------------------------- */
 
-
 .event.swiper .swiper-slide a {
   display: block;
   height: 100%;
   border-radius: 6px;
   overflow: hidden;
 }
-
-
 
 /* ------------------------------- 오직 타잉에만 있어요(ver.정현님 end) ------------------------------ */
 
@@ -216,23 +213,21 @@ aside {
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   object-fit: cover;
 }
 
 /* 트렌지션 효과를 주려했으나, 해상도가 줄어들 때 즉각 반응을 못하는 이슈가 발생 */
 
-  .text-wrap {
-    position: absolute;
-    bottom: 20%;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    padding: 0px 70px;
-    width: 100%;
-  }
-  
-
+.text-wrap {
+  position: absolute;
+  bottom: 20%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 0px 70px;
+  width: 100%;
+}
 
 .swiper-slide-active .text-wrap {
   opacity: 1;
@@ -337,15 +332,13 @@ aside {
 }
 
 .banner {
-width:100%;
-  margin: 0 8px 70px 8px ;
-  
+  width: 100%;
+  margin: 0 8px 70px 8px;
 }
 .banner img {
   width: 100%;
   height: auto;
 }
-
 
 /* -------------------------------- 모바일 디바이스 -------------------------------- */
 
@@ -379,7 +372,7 @@ width:100%;
     padding: 0 8px;
     margin-bottom: 16px;
   }
-  
+
   .event.swiper h2 {
     padding: 0 8px;
     margin-bottom: 16px;
@@ -387,8 +380,6 @@ width:100%;
     font-size: var(--text-size-s);
   }
 
-
-  
   .swiper-button-prev {
     background: url(../assets/main/Icon/icon_prev-button.png)
       no-repeat;
@@ -436,8 +427,7 @@ width:100%;
     border-right: 3px solid #fff;
   }
 
-
-  .text-wrap{
+  .text-wrap {
     bottom: 15%;
     padding: 0px 12px;
   }
@@ -448,7 +438,7 @@ width:100%;
 
   .test001 {
     font-size: var(--text-size-s);
-    padding:4px 6px;
+    padding: 4px 6px;
   }
   .swiper-pagination {
     top: 33.3vw;
@@ -463,14 +453,12 @@ width:100%;
   }
 
   .banner {
-    margin: 0 8px 16px 8px ;
-}
+    margin: 0 8px 16px 8px;
+  }
 
   .event.swiper .swiper-slide {
     width: 145px;
   }
-
-
 }
 
 /* -------------------------------- 태블릿 디바이스 -------------------------------- */
@@ -524,9 +512,9 @@ width:100%;
     height: 10px;
   }
 
-.text-wrap{
-  padding: 0px 30px;
-}
+  .text-wrap {
+    padding: 0px 30px;
+  }
 
   .test001 {
     font-size: var(--text-size-s);
@@ -535,14 +523,13 @@ width:100%;
 
   .text-wrap p {
     font-size: var(--text-size-m);
-
   }
 
   .event.swiper {
     padding: 0 8px;
     margin-bottom: 16px;
   }
-  
+
   .event.swiper h2 {
     padding: 0 8px;
     margin-bottom: 16px;
@@ -570,8 +557,6 @@ width:100%;
   }
 
   .banner {
-    margin: 0 8px 40px 8px ;
-}
-
-
+    margin: 0 8px 40px 8px;
+  }
 }
